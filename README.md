@@ -44,33 +44,45 @@ bun create next-app
     ```sh
     // tsconfig.json
     {
-      ...
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "plugins": [
-        {
-          "name": "next"
+      "compilerOptions": {
+        "target": "ES2017",
+        "lib": [
+          "dom",
+          "dom.iterable",
+          "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+          {
+            "name": "next"
+          }
+        ],
+        "baseUrl": ".",  // Base URL for resolving modules
+        "paths": {
+          "@/*": ["./*"],  // Use this to reference anything from the root folder
+          "@components/*": ["./app/components/*"],  // Adjusted to refer to the components folder within the app folder
+          "@utils/*": ["./utils/*"]
         }
+      },
+      "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts",
+        "next-env.d.ts",
+        "build/types/**/*.ts"
       ],
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./*"],
-        "@components/*": ["./app/components/*"],
-        "@utils/*": ["./utils/*"]
-      }
-    },
-    "include": [
-      "**/*.ts",
-      "**/*.tsx",
-      ".next/types/**/*.ts",
-      "next-env.d.ts",
-      "build/types/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
+      "exclude": [
+        "node_modules"
+      ]
     }
     ```
