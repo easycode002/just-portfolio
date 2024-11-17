@@ -1,7 +1,9 @@
+// next.config.ts
 import type { NextConfig } from "next";
+const path = require('path');
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  distDir: "build",
 };
 
 export default nextConfig;
