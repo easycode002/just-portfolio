@@ -14,48 +14,46 @@ bun create next-app
     npx tailwindcss init -p
     ```
  - Config `tailwindcss.config.js`
-    ```sh
-    /** @type {import('tailwindcss').Config} */
-    module.exports = {
-    content: [
-      "./app/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-    ],
-    theme: {
-      extend: {},
-    },
-      plugins: [],
-    };
-    ```
+  ```sh
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+    plugins: [],
+  };
+  ```
 
 ### Custome OutDir in nextjs
-    ```sh
-    // next.config.ts
-    import type { NextConfig } from "next";
-
-    const nextConfig: NextConfig = {
-      distDir: "build",
-    };
-
-    export default nextConfig;
-    ```
+  ```sh
+  // next.config.ts
+  import type { NextConfig } from "next";
+  const nextConfig: NextConfig = {
+    distDir: "build",
+  };
+  export default nextConfig;
+  ```
 
 ### Custome alias path
-    ```sh
-    // tsconfig.json
-    {
-      "compilerOptions": {
-        ...
-        "baseUrl": ".",  // Base URL for resolving modules
-        "paths": {
-          "@/*": ["./*"],  
-          "@components/*": ["./app/components/*"], 
-          "@utils/*": ["./utils/*"]
-        }
-      },
+  ```sh
+  // tsconfig.json
+  {
+    "compilerOptions": {
       ...
-      "exclude": [
-        "node_modules"
-      ]
-    }
-    ```
+      "baseUrl": ".",  // Base URL for resolving modules
+      "paths": {
+        "@/*": ["./*"],  
+        "@components/*": ["./app/components/*"], 
+        "@utils/*": ["./utils/*"]
+      }
+    },
+    ...
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  ```
