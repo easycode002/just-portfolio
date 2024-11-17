@@ -1,5 +1,9 @@
 # Sothea Mab
 
+<details>
+
+<summary>How to setup `NextJS` project and config tailwindcss</summary>
+
 ### Setup nextjs project
 
 ```sh
@@ -43,6 +47,14 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
+</details>
+
+---
+
+<details>
+
+<summary>How to custome alias path for nextjs project</summary>
+
 ### Custome alias path
 
 ```sh
@@ -64,6 +76,8 @@ export default nextConfig;
 }
 ```
 
+</details>
+
 ---
 
 <details>
@@ -71,11 +85,13 @@ export default nextConfig;
 <summary>How to config font and use in app</summary>
 
 ### Download font and move all to public folder
+
 ```sh
 public/fonts/Ubuntu-Regular.ttf
 ```
 
 ### Add config in global.css
+
 ```sh
 /* app/globals.css */
 
@@ -123,6 +139,7 @@ body {
 ```
 
 ### Config font in `tailwind.config.js`
+
 ```sh
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -146,6 +163,7 @@ module.exports = {
 ```
 
 ### Sample to use font
+
 ```sh
 export default function Home() {
   return (
@@ -157,4 +175,5 @@ export default function Home() {
   );
 }
 ```
+
 </details>
