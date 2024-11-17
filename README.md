@@ -29,31 +29,31 @@ bun create next-app
   ```
 
 ### Custome OutDir in nextjs
-  ```sh
-  // next.config.ts
-  import type { NextConfig } from "next";
-  const nextConfig: NextConfig = {
-    distDir: "build",
-  };
-  export default nextConfig;
-  ```
+```sh
+// next.config.ts
+import type { NextConfig } from "next";
+const nextConfig: NextConfig = {
+  distDir: "build",
+};
+export default nextConfig;
+```
 
 ### Custome alias path
-  ```sh
-  // tsconfig.json
-  {
-    "compilerOptions": {
-      ...
-      "baseUrl": ".",  // Base URL for resolving modules
-      "paths": {
-        "@/*": ["./*"],  
-        "@components/*": ["./app/components/*"], 
-        "@utils/*": ["./utils/*"]
-      }
-    },
+```sh
+// tsconfig.json
+{
+  "compilerOptions": {
     ...
-    "exclude": [
-      "node_modules"
-    ]
-  }
-  ```
+    "baseUrl": ".",  // Base URL for resolving modules
+    "paths": {
+      "@/*": ["./*"],  
+      "@components/*": ["./app/components/*"], 
+      "@utils/*": ["./utils/*"]
+    }
+  },
+  ...
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
