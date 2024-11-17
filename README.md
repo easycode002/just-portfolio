@@ -16,7 +16,7 @@ bun create next-app
  - Config `tailwindcss.config.js`
    ```sh
    /** @type {import('tailwindcss').Config} */
-module.exports = {
+   module.exports = {
    content: [
      "./pages/**/*.{js,ts,jsx,tsx}",
      "./components/**/*.{js,ts,jsx,tsx}",
