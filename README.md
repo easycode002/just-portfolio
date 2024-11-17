@@ -57,3 +57,9 @@ export default nextConfig;
   ]
 }
 ```
+
+<details>
+
+<summary>How to config font and use in app</summary>
+
+</details>

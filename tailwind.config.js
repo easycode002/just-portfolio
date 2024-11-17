@@ -6,7 +6,14 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        ubuntubold: ["Ubunto-Bold", "sans-serif"],
+        ubuntulight: ["Ubuntu-Light", "sans-serif"],
+        ubunturegular: ["Ubuntu-Regular", "sans-serif"],
+        kantumruy: ["Kantumruy", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
