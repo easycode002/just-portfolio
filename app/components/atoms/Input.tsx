@@ -1,30 +1,29 @@
 import React from "react";
 interface InputProps {
-    value?: string | number;
-    defaultValue?: string | number;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
-    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-    type?: "text" | "number" | "email" | "password" | "tel" | "url" | "search";
-    placeholder?: string;
-    isDisabled?: boolean;
-    isRequired?: boolean;
-    isReadOnly?: boolean;
-    name?: string;
-    label?: string;
-    style?: React.CSSProperties;
-    className?: string;
-    id?: string;
-    prefix?: React.ReactNode;
-    suffix?: React.ReactNode;
-    autoFocus?: boolean;
-    max?: number;
-    min?: number;
-    step?: number;
-    isError?: boolean;
-    errorMessage?: string;
-    [key: string]: any;
-  }
+  value?: string | number;
+  defaultValue?: string | number;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  type?: "text" | "number" | "email" | "password" | "tel" | "url" | "search";
+  placeholder?: string;
+  isDisabled?: boolean;
+  isRequired?: boolean;
+  isReadOnly?: boolean;
+  name?: string;
+  label?: string;
+  style?: React.CSSProperties;
+  className?: string;
+  id?: string;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
+  autoFocus?: boolean;
+  max?: number;
+  min?: number;
+  step?: number;
+  isError?: boolean;
+  errorMessage?: string;
+}
 const Input: React.FC<InputProps> = ({
   value,
   defaultValue,
@@ -53,7 +52,11 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={`input-wrapper ${className}`} style={style}>
-      {label && <label htmlFor={id} className="input-label">{label}</label>}
+      {label && (
+        <label htmlFor={id} className="input-label">
+          {label}
+        </label>
+      )}
       <div className="input-container flex items-center border rounded-md">
         {prefix && <span className="input-prefix px-2">{prefix}</span>}
         <input
