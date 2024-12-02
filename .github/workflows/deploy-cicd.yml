@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,30 +19,13 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install Dependencies
-        run: npm install
-      
-      - name: Build Project
-        run: npm run build
-      
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-output
-          path: .next 
-          
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Clear npm cache
+        run: npm cache clean --force
       
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install --legacy-peer-deps
+          npm install react@latest react-dom@latest
       
       - name: Build Project
         run: npm run build
