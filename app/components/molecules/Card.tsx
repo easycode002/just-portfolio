@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import Image from "next/image";
 
 // Update the interface to accept ReactNode for image
 interface ICard {
