@@ -1,20 +1,8 @@
-export const Menu = [
-  {
-    id: 1,
-    title: "Home",
-    link: "/",
-  },
-  {
-    id: 2,
-    title: "Service",
-    link: "/service",
-  },{
-    id: 3,
-    title: "About",
-    link: "/about",
-  },{
-    id: 4,
-    title: "Blog",
-    link: "/blog",
-  },
+export const menuItems = [
+  { name: "Home", href: "/", isActive: true },
+  { name: "About", href: "/about", isActive: false },
+  { name: "Skills", href: "/skills", isActive: false },
+  { name: "Services", href: "/services", isActive: false },
+  { name: "Portfolio", href: "/portfolio", isActive: false },
+  { name: "Contact", href: "/contact", isActive: false },
 ];
