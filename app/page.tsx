@@ -85,32 +85,33 @@ export default function Home() {
                     description="2+ Years"
                   />
                 </div>
+                <h1>hello</h1>
                 {/* Text context */}
                 <div className="flex flex-col pt-4 font-ubuntulight text-title w-full">
-  <p className="text-justify text-base leading-relaxed break-words">
-    Hello, I&apos;m <strong>Mab Sothea</strong>, a passionate Full
-    Stack Developer with over 8+ years of experience in creating
-    impact web solutions. I specialize in crafting user-centric
-    web applications with a focus on UI/UX design, robust
-    back-end development, and seamless integrations.
-  </p>
-  <ul className="list-disc list-inside space-y-2">
-    <li>
-      <strong>Experience:</strong> 8+ Years of expertise in
-      delivering end-to-end solutions for clients across
-      industries.
-    </li>
-    <li>
-      <strong>Projects Completed:</strong> Successfully
-      developed and delivered 48+ projects, tailored to meet
-      client needs with precision.
-    </li>
-    <li>
-      <strong>Support:</strong> Dedicated to providing 24/7
-      online support, ensuring every project runs smoothly.
-    </li>
-  </ul>
-</div>
+                  <p className="text-justify text-base leading-relaxed break-words">
+                    Hello, I&apos;m <strong>Mab Sothea</strong>, a passionate
+                    Full Stack Developer with over 8+ years of experience in
+                    creating impact web solutions. I specialize in crafting
+                    user-centric web applications with a focus on UI/UX design,
+                    robust back-end development, and seamless integrations.
+                  </p>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>
+                      <strong>Experience:</strong> 8+ Years of expertise in
+                      delivering end-to-end solutions for clients across
+                      industries.
+                    </li>
+                    <li>
+                      <strong>Projects Completed:</strong> Successfully
+                      developed and delivered 48+ projects, tailored to meet
+                      client needs with precision.
+                    </li>
+                    <li>
+                      <strong>Support:</strong> Dedicated to providing 24/7
+                      online support, ensuring every project runs smoothly.
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
