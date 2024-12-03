@@ -3,10 +3,10 @@ name: Build and Deploy to Vercel
 on:
   push:
     branches:
-      - main # Adjust this to your default branch name (e.g., "main" or "master")
+      - main  # Adjust this to your default branch (e.g., "main" or "master")
   pull_request:
     branches:
-      - main # Optional: Trigger on PRs to the main branch
+      - main  # Optional: Trigger on PRs to the main branch
 
 jobs:
   build:
@@ -17,15 +17,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js
+      # Set up Node.js (version 20.x.x)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Adjust based on your project requirements
+          node-version: '20.x.x'
 
-      # Install dependencies
+      # Install dependencies with --legacy-peer-deps flag to resolve dependency conflicts
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       # Build the project
       - name: Build the project
@@ -33,19 +33,19 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # This ensures deploy job only runs after the build job completes successfully
-    environment: production
+    needs: build  # Ensure deploy job runs only after build job completes
+    environment: production  # Optional: You can specify an environment (e.g., production)
 
     steps:
-      # Checkout code (again to ensure it's available for deployment)
+      # Checkout code again to ensure it's available in the deploy job
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js (again for consistency)
+      # Set up Node.js (same version for consistency)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '20.x.x'
 
       # Deploy to Vercel
       - name: Deploy to Vercel
