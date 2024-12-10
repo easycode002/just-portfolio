@@ -6,8 +6,21 @@ import {
   ExperienceIcon,
   SupportIcon,
 } from "./components/atoms/Icon";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  if (typeof window == "undefined") {
+    console.log(`=== Application is running on Server Side ===`);
+  } else {
+    alert("=== Application is running on Client Side ===");
+  }
+
+  if (process.browser) {
+    console.log("Variant 2: Application is on client side");
+  } else {
+    console.log("Variant 2: Application is on server side");
+  }
+
   return (
     <div className="w-full flex justify-center !2xl:px-2 !xl:px-2 !lg:px-2 !md:px-2 !sm:px-2">
       <main className="font-ubuntulight w-ful">
