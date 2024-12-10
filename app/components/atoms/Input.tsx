@@ -1,93 +1,82 @@
-import React from "react";
-interface InputProps {
-  value?: string | number;
-  defaultValue?: string | number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
-  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
-  type?: "text" | "number" | "email" | "password" | "tel" | "url" | "search";
-  placeholder?: string;
-  isDisabled?: boolean;
-  isRequired?: boolean;
-  isReadOnly?: boolean;
-  name?: string;
-  label?: string;
-  style?: React.CSSProperties;
-  className?: string;
-  id?: string;
-  prefix?: React.ReactNode;
-  suffix?: React.ReactNode;
-  autoFocus?: boolean;
-  max?: number;
-  min?: number;
-  step?: number;
-  isError?: boolean;
-  errorMessage?: string;
+"use client"
+
+import * as React from "react"
+import { cn } from "@/lib/utils"
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, ...props }, ref) => (
+    <input
+      ref={ref}
+      className={cn(
+        "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-subtitle focus:ring-1 focus:ring-[#0cc9af] outline-none",
+        className
+      )}
+      {...props}
+    />
+  )
+)
+Input.displayName = "Input"
+
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, ...props }, ref) => (
+    <textarea
+      ref={ref}
+      className={cn(
+        "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-subtitle focus:ring-1 focus:ring-[#05C7AE] outline-none",
+        className
+      )}
+      {...props}
+    />
+  )
+)
+Textarea.displayName = "Textarea"
+
+interface FloatingInputProps extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+  label: string
+  multiline?: boolean
 }
-const Input: React.FC<InputProps> = ({
-  value,
-  defaultValue,
-  onChange,
-  onFocus,
-  onBlur,
-  type = "text",
-  placeholder,
-  isDisabled = false,
-  isRequired = false,
-  isReadOnly = false,
-  name,
-  label,
-  style,
-  className,
-  id,
-  prefix,
-  suffix,
-  autoFocus = false,
-  max,
-  min,
-  step,
-  isError = false,
-  errorMessage,
-  ...props
-}) => {
-  return (
-    <div className={`input-wrapper ${className}`} style={style}>
-      {label && (
-        <label htmlFor={id} className="input-label">
+
+export const FloatingInput = React.forwardRef<HTMLInputElement | HTMLTextAreaElement, FloatingInputProps>(
+  ({ className, label, multiline = false, type = "text", ...props }, ref) => {
+    const [isFocused, setIsFocused] = React.useState(false)
+    const [hasValue, setHasValue] = React.useState(false)
+
+    const handleFocus = () => setIsFocused(true)
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setIsFocused(false)
+      setHasValue(!!e.target.value)
+    }
+
+    const InputComponent = multiline ? Textarea : Input
+
+    return (
+      <div className="flex relative w-full">
+        <label
+          className={cn(
+            "absolute left-4 transition-all duration-200",
+            (isFocused || hasValue) ? "-top-2.5 text-sm bg-white px-1" : "top-4 text-gray-500"
+          )}
+        >
           {label}
         </label>
-      )}
-      <div className="input-container flex items-center border rounded-md">
-        {prefix && <span className="input-prefix px-2">{prefix}</span>}
-        <input
-          id={id}
-          name={name}
+        <InputComponent
           type={type}
-          value={value}
-          defaultValue={defaultValue}
-          onChange={onChange}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          placeholder={placeholder}
-          disabled={isDisabled}
-          readOnly={isReadOnly}
-          required={isRequired}
-          autoFocus={autoFocus}
-          max={max}
-          min={min}
-          step={step}
-          className={`input-field flex-1 ${
-            isError ? "border-red-500" : "border-gray-300"
-          }`}
+          className={cn(
+            "h-14 rounded-2xl pl-4 pr-[18px] pt-4 w-full",
+            multiline && "min-h-[150px] rounded-2xl pt-6 pb-4 resize-none",
+            className
+          )}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          ref={ref as any}
           {...props}
         />
-        {suffix && <span className="input-suffix px-2">{suffix}</span>}
       </div>
-      {isError && errorMessage && (
-        <span className="input-error text-red-500 text-sm">{errorMessage}</span>
-      )}
-    </div>
-  );
-};
+    )
+  }
+)
 
-export default Input;
+FloatingInput.displayName = "FloatingInput"
