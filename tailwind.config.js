@@ -5,6 +5,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
       colors: {
@@ -41,18 +42,25 @@ module.exports = {
         title: ["22px", "26.4px"],
         subtitle: ["16px", "19.2px"],
       },
-      borderRadius:{
-        'xss': '1px',
-        'sms': '2px',
-        'mds': '4px',
-        'lgs': '6px',
-        'xls': '8px',
-        '2xls': '12px',
-        '3xls': '16px',
-        '4xls': '20px',
-        '5xls': '24px',
-        'fulls': '9999px',
-      }
+      borderRadius: {
+        xss: "1px",
+        sms: "2px",
+        mds: "4px",
+        lgs: "6px",
+        xls: "8px",
+        "2xls": "12px",
+        "3xls": "16px",
+        "4xls": "20px",
+        "5xls": "24px",
+        fulls: "9999px",
+      },
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [],

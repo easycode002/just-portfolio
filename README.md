@@ -177,3 +177,10 @@ export default function Home() {
 ```
 
 </details>
+
+
+
+bun add lucide
+bun remove lucide
+bun add class-variance-authority
+bun add tailwind-merge
