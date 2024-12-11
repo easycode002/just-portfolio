@@ -1,4 +1,6 @@
 import About from "./about/page";
+import { Footer } from "./components/molecules/footer";
+import Contact from "./contact/page";
 import Home from "./home/page";
 import Portfolio from "./portfolio/page";
 import Resume from "./resume/page";
@@ -16,7 +18,7 @@ export default function App() {
         </section>
 
         {/* Section - About */}
-        <section className="w-full bg-indigo-50">
+        <section className="w-full">
           <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16">
             <About />
           </div>
@@ -41,6 +43,13 @@ export default function App() {
             <Portfolio />
           </div>
         </section>
+        {/* Section - Contact */}
+        <section className="w-full bg-gray-200">
+          <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-16">
+            <Contact />
+          </div>
+        </section>
+        <Footer />
       </main>
     </div>
   );
