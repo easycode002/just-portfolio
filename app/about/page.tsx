@@ -18,7 +18,7 @@ const About = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
       <div className="text-center mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 uppercase border-b-2 border-gray-300 pb-2 inline-block">
+        <h2 className="text-center mb-3 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
           About me
         </h2>
       </div>
@@ -38,16 +38,22 @@ const About = () => {
           <h3 className="text-lg md:text-xl font-semibold text-gray-700 mb-6">
             My Personal Information
           </h3>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {personalInfo.map((info, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors duration-300"
               >
-                <PlayIcon width={16} height={16} className="text-gray-900 flex-shrink-0" />
+                <PlayIcon
+                  width={16}
+                  height={16}
+                  className="text-gray-900 flex-shrink-0"
+                />
                 <div className="flex space-x-2">
-                  <span className="font-semibold text-gray-800">{info.label}:</span>
+                  <span className="font-semibold text-gray-800">
+                    {info.label}:
+                  </span>
                   <span className="text-gray-600">{info.value}</span>
                 </div>
               </div>

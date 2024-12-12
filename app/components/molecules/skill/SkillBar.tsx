@@ -12,9 +12,9 @@ export function SkillBar({ name, percentage }: SkillBarProps) {
           {percentage}%
         </span>
       </div>
-      <div className="w-full bg-gray-100 h-4">
+      <div className="w-full bg-gray-100 h-4 rounded-sm">
         <div
-          className="!bg-primary h-4 transition-all duration-500 ease-out"
+          className="bg-[#05C7AE] h-4 transition-all rounded-sm duration-500 !opacity-100 ease-out"
           style={{ width: `${percentage}%` }}
         />
       </div>
