@@ -14,15 +14,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20.17.0'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm ci
 
       - name: Build the project
         run: npm run build
@@ -30,20 +31,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build 
+    if: github.ref == 'refs/heads/main'
     environment: production
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20.17.0'
-      - name: Show secret key (for debugging)
-        run: echo "TOKEN: $VERCEL_TOKEN"
-            #  echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
-            #  echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
+          cache: 'npm'
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
@@ -51,5 +50,3 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
