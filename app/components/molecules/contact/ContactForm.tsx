@@ -25,7 +25,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 w-full">
+    <div className="max-w-md mx-auto py-6 w-full">
       <form onSubmit={handleSubmit} className="space-y-4">
         <FloatingInput 
           label="Name" 

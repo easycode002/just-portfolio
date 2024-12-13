@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header className="flex flex-col text-center space-y-3">
-      <h2 className="text-h3 font-ubuntubold uppercase underline underline-offset-4 w-full">
+      <h2 className="text-center mb-3 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
         RESUME
       </h2>
       <div className="">

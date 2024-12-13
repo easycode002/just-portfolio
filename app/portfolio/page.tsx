@@ -19,7 +19,7 @@ const Portfolio = () => {
     activeCategory === "All" ? true : project.category === activeCategory
   );
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-12 w-full">
+    <section className="px-4 sm:px-6 md:px-8 lg:px-12 w-full">
       <div className="max-w-7xl mx-auto w-full">
         <h2 className="text-center mb-3 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
           Portfolio

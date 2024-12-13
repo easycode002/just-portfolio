@@ -4,7 +4,7 @@ import ContactForm from "../components/molecules/contact/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="container px-4 mt-16">
+    <div className="container px-4">
       <h2 className="text-center mb-3 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
         CONTACT
       </h2>
