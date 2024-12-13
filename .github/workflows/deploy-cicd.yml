@@ -42,8 +42,8 @@ jobs:
           node-version: '20.17.0'
       - name: Show secret key (for debugging)
         run: echo "TOKEN: $VERCEL_TOKEN"
-             echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
-             echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
+            #  echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
+            #  echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
