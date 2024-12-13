@@ -3,51 +3,48 @@ name: Build and Deploy to Vercel
 on:
   push:
     branches:
-      - main  # Adjust this to your default branch (e.g., "main" or "master")
+      - main
   pull_request:
     branches:
-      - main  # Optional: Trigger on PRs to the main branch
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout code
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js (version 20.x.x)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20.x.x'
+          node-version: '20.17.0'
 
-      # Install dependencies with --legacy-peer-deps flag to resolve dependency conflicts
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Build the project
       - name: Build the project
         run: npm run build
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build  # Ensure deploy job runs only after build job completes
-    environment: production  # Optional: You can specify an environment (e.g., production)
+    needs: build 
+    environment: production
 
     steps:
-      # Checkout code again to ensure it's available in the deploy job
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js (same version for consistency)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20.x.x'
+          node-version: '20.17.0'
+      - name: Show secret key (for debugging)
+        run: echo "TOKEN: $VERCEL_TOKEN"
+             echo "VERCEL_ORG_ID: $VERCEL_ORG_ID"
+             echo "VERCEL_PROJECT_ID: $VERCEL_PROJECT_ID"
 
-      # Deploy to Vercel
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
