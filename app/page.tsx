@@ -5,7 +5,7 @@ import Resume from "./resume/page";
 import Skill from "./skills/page";
 import Portfolio from "./portfolio/page";
 import Contact from "./contact/page";
-import { Footer } from "./components/molecules/footer";
+import { Footer } from "./components/molecules/Footer";
 
 export default function App() {
   return (
