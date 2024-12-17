@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import profile from "../../public/images/profile.png";
+import profile from "@/public/images/profile.png";
 import { PlayIcon } from "../components/atoms/Icon";
 
 const About = () => {
