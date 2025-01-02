@@ -16,7 +16,7 @@ const About = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+    <div className="container mx-auto mb-6 mt-12 px-4 py-8 md:py-12 lg:py-16">
       <div className="text-center mb-8 md:mb-12">
         <h2 className="text-center mb-3 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
           About me

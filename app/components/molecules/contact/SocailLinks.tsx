@@ -38,7 +38,7 @@ const socialLinks = [
 
 export function SocialLink({ icon, label, value, href }: SocialLinkProps) {
   return (
-    <div className="space-y-4 justify-end flex flex-col items-end">
+    <div className="space-y-4 justify-center flex flex-col items-center max-w-md mx-auto py-6 w-full">
       {socialLinks.map((link) => (
         <a
           key={link.label}

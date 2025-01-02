@@ -11,7 +11,7 @@ import {
 
 const  Skill=()=> {
   return (
-    <section className="px-4 sm:px-6 md:px-8 lg:px-12">
+    <section className="px-4 sm:px-6 mb-6 mt-12 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center mb-12 text-2xl md:text-3xl lg:text-4xl font-ubuntubold uppercase underline underline-offset-4">
           SKILL
