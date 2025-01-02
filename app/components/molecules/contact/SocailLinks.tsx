@@ -32,7 +32,7 @@ const socialLinks = [
     icon: <Facebook size={24} />,
     label: "Facebook",
     value: "@MABSOTHEA",
-    href: "https://facebook.com/MABSOTHEA",
+    href: "https://www.facebook.com/sm.nu15/",
   },
 ];
 
