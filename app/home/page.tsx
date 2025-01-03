@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../components/atoms/Button";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -19,33 +20,17 @@ const Home = () => {
         </h2>
 
         <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-1xl mx-auto leading-relaxed">
-          I am an experienced <strong>Data Analyst</strong> with a robust
-          foundation in backend and full-stack development. My technical
-          expertise includes Node.js, Express.js, Laravel, Django, and RESTful
-          APIs, alongside proficiency in managing databases such as MS SQL
-          Server and MongoDB. I excel in leveraging tools like Power BI,
-          Tableau, and Excel to transform complex datasets into actionable
-          insights and visually compelling dashboards. My experience with DevOps
-          practices, including CI/CD pipelines and AWS deployments using SST and
-          EC2, enables me to deliver scalable and efficient data-driven
-          solutions. Additionally, my familiarity with front-end frameworks like
-          React.js and Next.js allows me to approach backend development with a
-          full-stack perspective, ensuring seamless integration and
-          user-centered outcomes. With a strong commitment to data analytics,
-          visualization, and innovation, I bring valuable expertise to drive
-          strategic decision making and organizational success
+          I am a skilled Data Analyst specializing in transforming complex
+          datasets into actionable insights using Power BI, and advanced Excel.
+          With expertise in MS SQL Server, MongoDB, and data integration, I
+          deliver accurate analytics and impactful visualizations. My technical
+          background in Backend, Frontend and DevOps enables scalable,
+          data-driven solutions that drive strategic decision-making.
         </p>
 
         <div className="flex justify-center space-x-4 pt-4">
           <Button size="lg" className="text-subtitle font-ubunturegular !py-6">
-            Contact Me
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="text-subtitle font-ubunturegular !py-6 border-[1.5px] hover:border-[#25B5A2] border-[#25B5A2]"
-          >
-            View Portfolio
+            <Link href="#contact">Contact Me</Link>
           </Button>
         </div>
       </div>

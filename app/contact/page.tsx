@@ -1,6 +1,6 @@
 import React from "react";
-import { SocialLink } from "../components/molecules/contact/SocailLinks";
 import ContactForm from "../components/molecules/contact/ContactForm";
+import { SocialLinks } from "../components/molecules/contact/SocailLinks";
 
 const Contact = () => {
   return (
@@ -10,7 +10,7 @@ const Contact = () => {
       </h2>
       {/* mt-12 */}
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <SocialLink />
+        <SocialLinks />
         <ContactForm />
       </div>
     </div>
